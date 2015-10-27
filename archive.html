@@ -1,0 +1,22 @@
+---
+layout: default
+title: Archive
+---
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <small>という名のゴミの山</small>
+  </div>
+</div>
+
+<div class="container">
+  <div class="list-group">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}" class="list-group-item">
+        {{ post.title }}
+        <span class="badge"><i class="fa fa-clock-o fa-fw"></i> {{ post.date | date: '%Y-%m-%d %H:%M' }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>

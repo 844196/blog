@@ -1,0 +1,96 @@
+@primary: #e91e63;
+@dark_primary: #c2185b;
+@light_primary: #fff;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+body > .container {
+  margin-bottom: 15px;
+}
+
+a {
+  &:hover {
+    color: @primary;
+    text-decoration: none;
+  }
+  color: @primary;
+  .jumbotron & { color: @light_primary; }
+  .text-muted & { color: #777; }
+}
+
+a.list-group-item .list-group-item-heading {
+  font-weight: bold;
+}
+
+.jumbotron .container, .container {
+  max-width: 900px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.label { color: white !important; }
+
+.jumbotron {
+  color: white;
+  background-color: @primary;
+  small { color: @light_primary; }
+  h1 {
+    font-size: 34px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+.article-info .list-inline {
+  margin-bottom: 5px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #EEEEEE;
+  p { margin: 15px 0; }
+}
+
+.btn-info {
+  background-color: @primary;
+  border-color: darken(@primary, 3%);
+  &:hover, &:active, &:focus, &:active:hover, &:active:focus { background-color: @dark_primary; }
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: @dark_primary;
+  border: none;
+}
+
+.navbar-brand, .navbar-text, .navbar-nav>li>a, .navbar-nav>li>a:hover {
+  .navbar-default & { color: white; }
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+  &:hover, &:focus { background-color: transparent; }
+  .icon-bar { background-color: white; }
+}
+
+.navbar-header {
+  .navbar-brand:hover { color: white; }
+  button {
+    -webkit-transition: all 200ms ease;
+    transition: all 500ms ease;
+    &:hover { transform: rotate(180deg); }
+    .fa-bars { color: white; }
+  }
+}

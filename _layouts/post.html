@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div class="article-info">
+      {% if page.tag %}
+        <small class="pull-left">
+          <span class="fa-stack">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-tags fa-flip-horizontal fa-stack-1x"></i>
+          </span>
+        </small>
+        <ul class="list-unstyled list-inline">
+          {% for tag in page.tags %}
+            <li><a href="#" class="label label-default">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <small>
+        <span class="fa-stack">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-info fa-stack-1x"></i>
+        </span>
+        {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
+        が
+        {{ page.date | date: '%Y/%m/%d' }}
+        に投稿
+        ・
+        <a href="{{ site.github.root }}/{{ site.github.repo }}/commits/master/{{ page.path }}">編集履歴</a>
+        ・
+        <a href="{{ site.github.root }}/{{ site.github.repo }}/edit/master/{{ page.path }}">編集リクエストを作成する</a>
+      </small>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <article>
+    <div class="article-main">
+      {{ content }}
+      <script>hljs.initHighlightingOnLoad();</script>
+    </div>
+  </article>
+</div>
+
+<div class="container">
+  {% if page.previous or page.next %}
+    <nav>
+      <ul class="pager">
+        {% if page.previous %}
+          <li class="previous">
+            <a href="{{ page.previous.url }}" class="text-left">
+              <i class="fa fa-arrow-left fa-fw"></i>
+              {{ page.previous.title }}
+            </a>
+          </li>
+        {% endif %}
+        {% if page.next %}
+          <li class="next">
+            <a href="{{ page.next.url }}" class="text-right">
+              {{ page.next.title }}
+              <i class="fa fa-arrow-right fa-fw"></i>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>

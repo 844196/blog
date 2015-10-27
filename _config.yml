@@ -1,0 +1,45 @@
+title: BlankSlate
+url: http://844196.github.io
+author: '844196'
+description: いや、そういう声もあるというだけです
+timezone: Asia/Tokyo
+
+github:
+    root: https://github.com
+    repo: 844196.github.io
+
+social:
+    twitter: '844196'
+    tumblr: '844196'
+    github: '844196'
+    flickr: 's083027'
+
+exclude:
+    - README.md
+    - vendor
+    - Guardfile
+    - Gemfile
+    - Gemfile.lock
+permalink: /:year/:month/:day/:title
+baseurl: ''
+paginate: 10
+paginate_path: "page:num"
+gems:
+    - jemoji
+    - jekyll-sitemap
+    - jekyll-mentions
+
+markdown: redcarpet
+redcarpet:
+    extensions:
+        - tables
+        - fenced_code_blocks
+        - no_intra_emphasis
+        - strikethrough
+        - footnotes
+        - autolink
+        - lax_spacing
+        - space_after_headers
+        - hard_wrap
+
+highlighter: false
