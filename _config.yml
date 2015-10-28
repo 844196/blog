@@ -43,4 +43,4 @@ redcarpet:
         - space_after_headers
         - hard_wrap
 
-highlighter: false
+highlighter: null
