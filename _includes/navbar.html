@@ -8,6 +8,23 @@
     </div>
     <div id="button-toggle" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-plus-square fa-fw"></i>&nbsp;New<i class="fa fa-caret-down fa-fw"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{{ site.github.root }}/{{ site.github.repo }}/new/master?filename=_posts/0000-00-00-title.md">
+                <i class="fa fa-edit fa-fw"></i>&nbsp;Post
+              </a>
+            </li>
+            <li>
+              <a href="{{ site.github.root }}/{{ site.github.repo }}/tree/master/_drafts">
+                <i class="fa fa-inbox fa-fw"></i>&nbsp;Drafts
+              </a>
+            </li>
+          </ul>
+        </li>
         <li>
           <a href="/archive.html"><i class="fa fa-archive fa-fw"></i>&nbsp;Archive</a>
         </li>
