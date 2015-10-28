@@ -8,7 +8,7 @@ date: 2015-10-28 01:05
 
 メモ用のページをJekyllでゴリゴリつくった。
 
-Jekyllの経験は[昔つくったLog](https://www.flickr.com/photos/s083027/21898974164/in/dateposted-public/)と[村まとめ](http://vill.osamu-net.hokkaido.jp/)だけなんだけど、テンプレートの仕組みをよく理解しないで書いたので、めちゃくちゃ汚い。今読んでもまったくわからない（ので、フルスクラッチで作りなおしてくれる方募集中です）。
+Jekyllの経験は[昔つくったLog](https://www.flickr.com/photos/s083027/21898974164/in/dateposted-public/)と[村まとめ](http://vill.osamu-net.hokkaido.jp/)だけなんだけど、テンプレートの仕組みをよく理解しないで書いたので、めちゃくちゃ汚い。今読んでもまったくわからない（ので、村まとめをフルスクラッチで作りなおしてくれる方募集中です）。
 
 ## モチベーション
 
@@ -16,7 +16,7 @@ Jekyllの経験は[昔つくったLog](https://www.flickr.com/photos/s083027/218
 
 ## 方針
 
-ローカルで使ってる自作メモ用CSSそのまま当てて、最低限記事一覧をリストで見れるくらいにしとこうと思ったけど、見た目がしょぼいと使うモチベーションが起きないので、Qiitaを丸パクリ。
+ローカルで使ってる自作メモ用CSSをそのまま当てて、最低限記事一覧をリストで見れるくらいにしとこうと思ったけど、見た目がしょぼいと使うモチベーションが起きないので、Qiitaを丸パクリ。
 
 あとは、同じBootstrap使ってるんだから、[GistList](http://keepoff07.github.io/gistlist)[^fn1]よりはかっこ良くしたいなぁという無駄なライバル意識。
 
@@ -40,7 +40,9 @@ Jekyllの経験は[昔つくったLog](https://www.flickr.com/photos/s083027/218
 
 ## いいとこ
 
-[Redcarpet](https://github.com/vmg/redcarpet)のreadmeちゃんと読んだら、fenced_code以外に色々な拡張Markdown記法を有効に出来るみたいで、せっかくなのでGitHub準拠＋footnoteを有効にした。[Jemoji](https://github.com/jekyll/jemoji)も有効にしたので絵文字が使える:sushi:（はず）。
+[Redcarpet](https://github.com/vmg/redcarpet)のreadmeちゃんと読んだら、fenced_code以外に色々な拡張Markdown記法を有効に出来るみたいで、せっかくなのでGitHub準拠＋footnoteを有効にした[^fn2]。[Jemoji](https://github.com/jekyll/jemoji)も有効にしたので絵文字が使える:sushi: 。
+
+[^fn2]: ただ、注釈に飛んで元の文に戻ると、navbarに被って元の文が見えない。なんとかしたい。
 
 あと、[Guard::LiveReload](https://github.com/guard/guard-livereload)でライブリロード出来るようにした。Lessのコンパイルで元々使う予定だったけど、ライブリロードも出来るっぽいので入れておいた。previmとは違って必ず保存しないと更新されないけど、いちいちブラウザにフォーカスを移して`<C-r>`押すよりは楽。
 
