@@ -1,0 +1,25 @@
+.header {
+  margin-bottom: 30px;
+  padding: 30px 15px;
+  color: white;
+  background-color: @primary;
+
+  small { color: @light_primary; }
+  .label { color: white !important; }
+  a {
+    color: @light_primary;
+    &:hover { text-decoration: underline; }
+  }
+  h1 {
+    font-size: 34px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  .article-info .list-inline {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header { padding: 48px 0; }
+}
