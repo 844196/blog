@@ -42,5 +42,7 @@ redcarpet:
         - lax_spacing
         - space_after_headers
         - hard_wrap
+        - highlight
+        - with_toc_data
 
 pygment: false
