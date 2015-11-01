@@ -1,0 +1,126 @@
+@primary: #e91e63;
+@dark_primary: #c2185b;
+@light_primary: #fff;
+
+.mdl-layout__header { background-color: #C2185B; }
+.mdl-navigation__link > .material-icons,
+.mdl-menu__item > .material-icons {
+  padding-right: 10px;
+}
+
+.mdl-navigation__link, .mdl-menu__item {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flex-box !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.navbar-title {
+  text-decoration: none;
+  color: white;
+}
+
+.mdl-layout__content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+
+.mdl-layout__content > *:not(.mdl-layout-spacer) {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.mdl-grid {
+  padding: 15px;
+}
+
+.mdl-card__title {
+  background-color: #e91e63;
+  color: white;
+}
+.mdl-card__title > h1 {
+  margin: 30px 0;
+}
+
+.mdl-card__menu {
+  color: white;
+}
+
+.pager nav .section-spacer {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.pager nav > a {
+  text-decoration: none;
+}
+
+.pager nav > a button {
+  margin: 0 10px;
+}
+
+.pager nav {
+  padding: 0 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+}
+
+.posts {
+  width: 100%;
+  max-width: 900px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px auto 0 auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+.article-main {
+  padding: 10px 35px;
+}
+
+@media (max-width: 769px) {
+  .article-main {
+    padding: 10px 15px;
+  }
+}

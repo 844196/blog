@@ -3,40 +3,19 @@ layout: default
 top: true
 ---
 
-<div class="container" style="margin-top: 20px">
-  <div class="list-group">
-    {% for post in paginator.posts %}
-      <a href="{{ post.url }}" class="list-group-item">
-        <h4 class="list-group-item-heading">
-          {{ post.title }}
-          <span class="badge pull-right"><i class="fa fa-clock-o fa-fw"></i> {{ post.date | date: '%Y-%m-%d %H:%M' }}</span>
-        </h4>
-        <p class="list-group-item-text">
-          {{ post.content | strip_html | strip_newlines | truncate: 140 }}
-        </p>
-      </a>
-    {% endfor %}
-  </div>
-  {% if paginator.previous_page or paginator.next_page %}
-    <nav>
-      <ul class="pager">
-        {% if paginator.next_page %}
-          <li class="previous">
-            <a href="{{ paginator.next_page_path }}" class="text-left">
-              <i class="fa fa-arrow-left fa-fw"></i>
-              Previous
-            </a>
-          </li>
-        {% endif %}
-        {% if paginator.previous_page %}
-          <li class="next">
-            <a href="{{ paginator.previous_page_path }}" class="text-right">
-              Next
-              <i class="fa fa-arrow-right fa-fw"></i>
-            </a>
-          </li>
-        {% endif %}
-      </ul>
-    </nav>
-  {% endif %}
+<div class="mdl-grid">
+  {% for post in site.posts limit: 1 %}
+    {% include post.html title=post.title author=post.author date=post.date path=post.path url=post.url content=post.content %}
+  {% endfor %}
+</div>
+
+<div class="posts pager">
+  <nav class="mdl-cell mdl-cell--12-col">
+    <a href="/archive.html" class="mdl-color-text--grey-700">
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--icon mdl-color--white">
+        <i class="material-icons">arrow_back</i>
+      </button>
+      More
+    </a>
+  </nav>
 </div>

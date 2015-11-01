@@ -31,6 +31,8 @@ article > .article-header {
 .article-main {
   h2, h3 {
     font-weight: bold;
+    line-height: inherit;
+    letter-spacing: inherit;
   }
 
   h2 {
@@ -53,6 +55,8 @@ article > .article-header {
   }
 
   p {
+    line-height: inherit;
+    letter-spacing: inherit;
     margin: 1.4em 0;
   }
 
@@ -100,6 +104,20 @@ article > .article-header {
   }
 
   blockquote {
+    &:before, &:after {
+      content: '';
+      margin: 0;
+    }
+
+    cite {
+      &:before { content: '― '}
+      display: block;
+      text-align: right;
+    }
+
+    p {
+      font-style: normal
+    }
     font-size: inherit;
     padding: 0 15px;
     color: lighten(@article-main-color, 10%);
