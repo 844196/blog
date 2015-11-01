@@ -2,7 +2,9 @@
   <article>
 
       <div class="mdl-card__title">
-        <h1 class="mdl-card__title-text">{{ include.title }}</h1>
+        <h1 class="mdl-card__title-text">
+          <a href="{{ include.url }}">{{ include.title }}</a>
+        </h1>
       </div>
 
       <div class="mdl-card__actions" style="border-bottom: 1px solid rgba(0,0,0,.1)">
