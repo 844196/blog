@@ -1,0 +1,6 @@
+<p style="text-align: {% if include.align %} {{ include.align }} {% else %} center {% endif %}">
+  <img src="{{ include.src }}">
+</p>
+{% if include.caption %}
+  <p style="font-style: italic; text-align: center">{{ include.caption }}</p>
+{% endif %}
