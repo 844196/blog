@@ -108,6 +108,21 @@ graph LR
     - 認証エージェントとやり取りするためのUNIXソケットファイルへのパス
     - 基本的に認証エージェントが起動時に定義する
 
+## ユースケース
+
+1. `ssh-agent`起動する。
+2. `ssh-add`を用い、秘密鍵を`ssh-agent`へ登録する。
+3. `ssh`する
+
+→ 一度`ssh-add`しておくと、同一セッション中は秘密鍵のパスフレーズを入力しなくてもよくなる。
+
+### <i class="fa fa-exclamation-circle fa-fw"></i> 問題
+
+- `ssh-agent`は明示的に終了させないといけない
+
+<blockquote class="twitter-tweet tw-align-center" lang="ja"><p lang="ja" dir="ltr">とりあえず今の設定のままだとダメっぽいことがわかって学びがある <a href="https://t.co/Go31JboBla">pic.twitter.com/Go31JboBla</a></p>&mdash; 猿 (@844196) <a href="https://twitter.com/844196/status/661178165658710016">2015, 11月 2</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## 参考
 
 - <http://euske.github.io/openssh-jman/ssh-agent.html>
