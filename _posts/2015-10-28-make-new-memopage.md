@@ -4,7 +4,7 @@ title: にっき
 date: 2015-10-28 01:05
 ---
 
-![](https://farm6.staticflickr.com/5716/21900350874_b3ed17ca03_b.jpg)
+{% include img src='https://farm6.staticflickr.com/5716/21900350874_b3ed17ca03_b.jpg' %}
 
 メモ用のページをJekyllでゴリゴリつくった。
 
