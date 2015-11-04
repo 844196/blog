@@ -9,9 +9,9 @@ date: 2015-11-04 18:40
 
 ## tl;dr
 
-<div class="alert alert-info">おさむん<ruby>家<rt>ち</rt></ruby> <ruby>Advent<rt>あどべんと</rt></ruby> <ruby>Calendar<rt>かれんだー</rt></ruby>では、この<ruby>段落<rt>だんらく</rt></ruby><ruby>以外<rt>いがい</rt></ruby>を<ruby>読<rt>よ</rt></ruby>む<ruby>必要<rt>ひつよう</rt></ruby>はありません</div>
+<div class="alert alert-info">おさむん<ruby>家<rt>ち</rt></ruby> <ruby>Advent<rt>あどべんと</rt></ruby> <ruby>Calendar<rt>かれんだー</rt></ruby>では、この<ruby>節<rt>せつ</rt></ruby><ruby>以外<rt>いがい</rt></ruby>を<ruby>読<rt>よ</rt></ruby>む<ruby>必要<rt>ひつよう</rt></ruby>はありません</div>
 
-<ruby>Twitter<rt>ついったー</rt></ruby>の<ruby>仕様変更<rt>しようへんこう</rt></ruby>により、<ruby>今<rt>いま</rt></ruby>までの:star:（お<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>り）アイコンが:heart:（いいね）アイコンへ<ruby>変更<rt>へんこう</rt></ruby>されました。しかし、<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>らないユーザは、<ruby>自身<rt>じしん</rt></ruby>でスタイルシートを<ruby>作成<rt>さくせい</rt></ruby>・<ruby>定義<rt>ていぎ</rt></ruby>することで<ruby>自分<rt>じぶん</rt></ruby>の<ruby>好<rt>す</rt></ruby>きなアイコンへ<ruby>変更<rt>へんこう</rt></ruby>することができます。
+<ruby>Twitter<rt>ついったー</rt></ruby>の<ruby>仕様変更<rt>しようへんこう</rt></ruby>により、<ruby>今<rt>いま</rt></ruby>までの:star:（お<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>り）アイコンが:heart:（いいね）アイコンへ<ruby>変更<rt>へんこう</rt></ruby>されました。しかし、<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>らないユーザは、<ruby>自身<rt>じしん</rt></ruby>でスタイルシートを<ruby>作成<rt>さくせい</rt></ruby>・<ruby>適用<rt>てきよう</rt></ruby>することで<ruby>自分<rt>じぶん</rt></ruby>の<ruby>好<rt>す</rt></ruby>きなアイコンへ<ruby>変更<rt>へんこう</rt></ruby>することができます。
 
 ## ネタ元
 
@@ -56,6 +56,6 @@ CSS内で指定できるように、作成した画像をアップロードす�
 }
 ```
 
-## カスタムスタイルシートの適用
+## カスタムCSSの適用
 
 ネタ元を参照せよ。
