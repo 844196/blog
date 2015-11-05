@@ -59,3 +59,8 @@ CSS内で指定できるように、作成した画像をアップロードす�
 ## カスタムCSSの適用
 
 ネタ元を参照せよ。
+
+## SEE ALSO
+
+- `yokunaine.md` created by @sasairc - <https://gist.github.com/sasairc/3af98b540784b73a136c>
+    - Vim以外のアイコン集
