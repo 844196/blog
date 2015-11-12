@@ -22,3 +22,8 @@ end
 
 # alias
 task :post => [:new]
+
+desc "Live preview"
+task :preview do
+  `bundle exec guard start`
+end
