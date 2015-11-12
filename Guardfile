@@ -4,7 +4,7 @@ guard :shell do
   watch(%r{css/.+\.less}) { `lessc --clean-css css/style.less css/style.css` }
 end
 
-guard 'jekyll-plus', :server => true do
+guard 'jekyll-plus', :serve => true do
   watch(%r{.*})
   ignore(%r{^_site/})
 end
