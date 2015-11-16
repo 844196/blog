@@ -20,6 +20,7 @@ exclude:
     - Guardfile
     - Gemfile
     - Gemfile.lock
+    - Rakefile
     - css/*.less
 permalink: /:year/:month/:day/:title
 baseurl: ''
