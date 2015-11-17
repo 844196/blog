@@ -1,11 +1,11 @@
-<footer class="mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section">
-    <i class="fa fa-copyright fa-fw"></i>
-    {{ site.time | date: '%Y' }}
-    {{ site.title }}
-  </div>
-  <div class="mdl-mini-footer__right-section">
-    <div class="mdl-mini-footer__link-list">
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted pull-left">
+      <i class="fa fa-copyright fa-fw"></i>
+      {{ site.time | date: '%Y' }}
+      {{ site.title }}
+    </p>
+    <p class="text-muted pull-right">
       {% if site.social.twitter %}
         <a href="https://twitter.com/{{ site.social.twitter }}">
           <i class="fa fa-twitter-square fa-lg fa-fw"></i>
@@ -45,6 +45,6 @@
       <a href="/feed.xml">
         <i class="fa fa-rss-square fa-lg fa-fw"></i>
       </a>
-    </div>
+    </p>
   </div>
 </footer>

@@ -24,6 +24,7 @@ exclude:
     - css/*.less
 permalink: /:year/:month/:day/:title
 baseurl: ''
+paginate: 5
 paginate_path: "page:num"
 gems:
     - jemoji

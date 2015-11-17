@@ -1,0 +1,49 @@
+$primary: #9d73bb;
+$sub: #ccb3dd;
+
+
+// common
+.container { max-width: 900px; }
+a {
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+  color: $primary;
+}
+
+
+// navbar
+@media (max-width: 767px) {
+  .navbar-brand { line-height: inherit; }
+}
+
+.navbar { margin-bottom: 30px; }
+.navbar-default {
+  .navbar-toggle {
+    color: #666;
+    border: none;
+    &:hover, &:focus { background-color: transparent; }
+  }
+}
+
+
+// footer
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body { margin-bottom: 80px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #eeeeee;
+  p { margin: 15px 0; }
+  .text-muted>a {
+    &:hover { color: #555; }
+    color: #777;
+  }
+}

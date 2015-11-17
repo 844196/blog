@@ -4,24 +4,10 @@
   {% include head.html %}
 
   <body>
-    <div class="mdl-layout__container">
-      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    {% include navbar.html %}
 
-        {% include navbar.html %}
+    {{ content }}
 
-        <div class="mdl-layout__content mdl-color--grey-200">
-
-          <div class="page-content">
-            {{ content }}
-          </div>
-
-          <div class="mdl-layout-spacer"></div>
-          {% include footer.html %}
-
-        </div>
-
-      </div>
-
-    </div>
+    {% include footer.html %}
   </body>
 </html>

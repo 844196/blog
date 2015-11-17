@@ -2,87 +2,15 @@
 layout: default
 ---
 
-<div class="mdl-grid">
-  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col posts">
-    <article>
-
-        <div class="mdl-card__title">
-          <h1 class="mdl-card__title-text">
-            <a href="{{ page.url }}">{{ page.title }}</a>
-          </h1>
-        </div>
-
-        <div class="mdl-card__actions" style="border-bottom: 1px solid rgba(0,0,0,.1)">
-          <span style="padding-left: 3px;">
-            <i class="material-icons" style="vertical-align: middle">info_outline</i>
-            <small>
-              {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
-              が
-              {{ page.date | date: '%Y/%m/%d' }}
-              に投稿
-            （この記事は約{{ content | size | divided_by: 500 }}分で読めます）
-            </small>
-          </span>
-        </div>
-
-        <div id="action-menu" class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">more_vert</i>
-          </button>
-        </div>
-
-        <ul for="action-menu" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect">
-          <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}%20%7C%20{{ site.title }}&url={{ site.url }}{{ page.url }}&via={{ site.social.twitter }}" class="mdl-menu__item mdl-color-text--grey-700" data-count="none" onClick="">
-            <i class="fa fa-twitter" style="font-size: 24px; padding-right: 10px;"></i>
-            ツイートする
-          </a>
-          <a href="{{ site.github.root }}/{{ site.github.repo }}/edit/master/{{ page.path }}" class="mdl-menu__item mdl-color-text--grey-700">
-            <i class="material-icons">edit</i>
-            編集リクエストを作成する
-          </a>
-          <a href="{{ site.github.root }}/{{ site.github.repo }}/issues/new?title=%E3%80%8C{{ page.path | uri_escape }}%E3%80%8D%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" class="mdl-menu__item mdl-color-text--grey-700">
-            <i class="material-icons">feedback</i>
-            問題点を通報する
-          </a>
-          <a href="{{ site.github.root }}/{{ site.github.repo }}/commits/master/{{ page.path }}" class="mdl-menu__item mdl-color-text--grey-700">
-            <i class="material-icons">history</i>
-            編集履歴を見る
-          </a>
-        </ul>
-
-        <div class="article-main">
-
-          {{ content }}
-
-          <script>hljs.initHighlightingOnLoad();</script>
-        </div>
-
-    </article>
-  </div>
+<div class="container">
+  <article>
+    <div class="article-header">
+      <h1>{{ page.title }}</h1>
+      <time>{{ page.date | date:'%Y/%m/%d %H:%M' }}</time>
+    </div>
+    <div class="article-main">
+      {{ content }}
+      <script>hljs.initHighlightingOnLoad();</script>
+    </div>
+  </article>
 </div>
-
-{% if page.previous or page.next %}
-  <div class="posts pager">
-    <nav class="mdl-cell mdl-cell--12-col">
-      {% if page.previous %}
-        <a href="{{ page.previous.url }}" class="mdl-color-text--grey-700">
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--icon mdl-color--white">
-            <i class="material-icons">arrow_back</i>
-          </button>
-          Previous
-        </a>
-      {% endif %}
-
-      <div class="section-spacer"></div>
-
-      {% if page.next %}
-        <a href="{{ page.next.url }}" class="mdl-color-text--grey-700">
-          Next
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--icon mdl-color--white">
-            <i class="material-icons">arrow_forward</i>
-          </button>
-        </a>
-      {% endif %}
-    </nav>
-  </div>
-{% endif %}

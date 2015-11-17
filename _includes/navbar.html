@@ -1,44 +1,22 @@
-<header class="mdl-layout__header">
-  <div class="mdl-layout__header-row">
+<nav class="navbar navbar-static-top navbar-default ">
+  <div class="container">
 
-    <!-- Title -->
-    <span class="mdl-layout-title">
-      <a href="/" class="navbar-title">
-        {{ site.title }}
-      </a>
-    </span>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#button-toggle" aria-expanded="false">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="/">{{ site.title }}</a>
+    </div>
 
-    <!-- Add spacer, to align navigation to the right -->
-    <div class="mdl-layout-spacer"></div>
-
-    <!-- Navigation. We hide it in small screens. -->
-    <nav class="mdl-navigation mdl-cell--hide-phone">
-      <a class="mdl-navigation__link" href="{{ site.github.root }}/{{ site.github.repo }}/issues/new?title=%5BAsk%20me%5D">
-        <i class="material-icons">question_answer</i>
-        Ask
-      </a>
-      <a class="mdl-navigation__link" href="/archive.html">
-        <i class="material-icons">folder</i>
-        Archive
-      </a>
-    </nav>
+    <div id="button-toggle" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="{{ site.github.root }}/{{ site.github.repo }}/issues/new?title=%5BAsk%20me%5D">
+            <i class="fa fa-comments-o fa-fw"></i>&nbsp;Ask
+          </a>
+        </li>
+      </ul>
+    </div>
 
   </div>
-</header>
-
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">{{ site.title }}</span>
-  <nav class="mdl-navigation">
-
-    <a class="mdl-navigation__link" href="{{ site.github.root }}/{{ site.github.repo }}/issues/new?title=%5BAsk%20me%5D">
-      <i class="material-icons">question_answer</i>
-      Ask
-    </a>
-
-    <a class="mdl-navigation__link" href="/archive.html">
-      <i class="material-icons">folder</i>
-      Archive
-    </a>
-
-  </nav>
-</div>
+</nav>
