@@ -47,3 +47,5 @@ redcarpet:
 pygment: false
 sass:
     style: compressed
+
+disqus: 'blankslate844196'
