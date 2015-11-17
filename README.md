@@ -2,7 +2,6 @@
 
 - Ruby (>=2.1.0)
 - bundler
-- lessc (for less compile)
 
 
 ## Local Setup
