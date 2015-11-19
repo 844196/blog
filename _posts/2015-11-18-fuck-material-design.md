@@ -16,6 +16,10 @@ date: 2015-11-18 00:18
 
 ## 変更したところ
 
+<div class="alert alert-info">
+  このサイトの構成物全ては、<a href="https://github.com/844196/844196.github.io">844196/844196.github.io</a>で確認できます。
+</div>
+
 - フレームワークをMDLからBootstrapへ戻した
     - んほおぉぉぉぉ♡`div.container`べんりすぎるのおぉぉぉぉ♡
 - 今までlessの変更を検知して`style.css`をビルドしてたけど、変更がある度に`git add`するのは面倒だし、ビルド後のCSSをバージョン管理する必要はまったくないので、CSSのビルドをJekyllで行えるようにSCSS記法へ変更
