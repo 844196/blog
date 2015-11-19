@@ -16,6 +16,7 @@
   background-color: $color;
   border-color: darken($color, 7%);
   color: darken($color, 50%);
+  a { color: darken($color, 50%); }
 }
 
 .alert-accept  { @include alert-template (#c8e6c9, '承認'); }
