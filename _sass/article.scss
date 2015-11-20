@@ -69,6 +69,14 @@ article {
     &:hover { text-decoration: underline; }
   }
 
+  .ex_link:after {
+    content: "\00a0\f08e";
+    font: {
+      size: 75%;
+      style: normal !important;
+    }
+  }
+
   hr {
     height: 0;
     border: 0;
