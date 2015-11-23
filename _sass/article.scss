@@ -101,8 +101,7 @@ article {
     display: block;
     width: 100%;
     overflow: auto;
-    word-break: normal;
-    word-break: keep-all;
+    word-break: break-word;
     border-collapse: collapse;
     border-spacing: 0;
     th {
