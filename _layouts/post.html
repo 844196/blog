@@ -14,14 +14,7 @@ layout: default
     </div>
   </article>
 
-  <div class="post-action">
-    <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="{{ site.social.twitter }}">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <a href="{{ site.github.root }}/{{ site.github.repo }}/commits/master/{{ page.path }}" class="btn-custom" role="button">
-      <i class="fa fa-history fa-fw"></i>
-      History
-    </a>
-  </div>
+  {% include post-action.html %}
 
   <div class="disqus">
     {% include disqus.html %}
