@@ -6,41 +6,11 @@
       {{ site.title }}
     </p>
     <p class="text-muted pull-right">
-      {% if site.social.twitter %}
-        <a href="https://twitter.com/{{ site.social.twitter }}">
-          <i class="fa fa-twitter-square fa-lg fa-fw"></i>
+      {% for service in site.data.profile.social_accounts %}
+        <a href="{{ service.href }}">
+          <i class="fa {{ service.icon }} fa-lg fa-fw"></i>
         </a>
-      {% endif %}
-
-      {% if site.social.github %}
-      <a href="https://github.com/{{ site.social.github }}">
-        <i class="fa fa-github-square fa-lg fa-fw"></i>
-      </a>
-      {% endif %}
-
-      {% if site.social.tumblr %}
-      <a href="http://{{ site.social.tumblr }}.tumblr.com/">
-        <i class="fa fa-tumblr-square fa-lg fa-fw"></i>
-      </a>
-      {% endif %}
-
-      {% if site.social.flickr %}
-      <a href="https://flickr.com/{{ site.social.flickr }}">
-        <i class="fa fa-flickr fa-lg fa-fw"></i>
-      </a>
-      {% endif %}
-
-      {% if site.social.facebook %}
-      <a href="https://www.facebook.com/{{ site.social.facebook }}">
-        <i class="fa fa-facebook-square fa-lg fa-fw"></i>
-      </a>
-      {% endif %}
-
-      {% if site.social.instagram %}
-      <a href="https://www.instagram.com/{{ site.social.instagram }}">
-        <i class="fa fa-instagram fa-lg fa-fw"></i>
-      </a>
-      {% endif %}
+      {% endfor %}
 
       <a href="/feed.xml">
         <i class="fa fa-rss-square fa-lg fa-fw"></i>

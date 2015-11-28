@@ -8,12 +8,6 @@ github:
     root: https://github.com
     repo: 844196/844196.github.io
 
-social:
-    twitter: '844196'
-    tumblr: '844196'
-    github: '844196'
-    flickr: 's083027'
-
 exclude:
     - README.md
     - vendor
