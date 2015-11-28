@@ -18,7 +18,7 @@ a {
   .navbar-brand { line-height: inherit; }
 }
 
-.navbar { margin-bottom: 30px; }
+.navbar { margin: 0; }
 .navbar-default {
   .navbar-toggle {
     color: #666;
@@ -26,6 +26,10 @@ a {
     &:hover, &:focus { background-color: transparent; }
   }
 }
+
+
+// main
+.wrapper { padding-top: 30px; }
 
 
 // footer
