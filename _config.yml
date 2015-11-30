@@ -7,6 +7,7 @@ timezone: Asia/Tokyo
 github:
     root: https://github.com
     repo: 844196/blog
+    branch: gh-pages
 
 exclude:
     - README.md
