@@ -1,12 +1,12 @@
 title: BlankSlate
-url: http://844196.com
+url: http://844196.com/blog
 author: '844196'
 description: いや、そういう声もあるというだけです
 timezone: Asia/Tokyo
 
 github:
     root: https://github.com
-    repo: 844196/844196.github.io
+    repo: 844196/blog
 
 exclude:
     - README.md
@@ -14,8 +14,8 @@ exclude:
     - Guardfile
     - Gemfile
     - Gemfile.lock
+baseurl: '/blog'
 permalink: /:year/:month/:day/:title
-baseurl: ''
 paginate: 5
 paginate_path: "page:num"
 gems:
