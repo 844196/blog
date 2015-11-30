@@ -5,7 +5,7 @@ date: 2015-10-30 12:30
 ---
 
 > 基本的に、外枠はNuitterでの成果物をそのまま当てて...
-<cite><a href="{% post_url 2015-10-28-make-new-memopage %}">にっき | BlankSlate</a></cite>
+<cite><a href="{{ site.baseurl }}{% post_url 2015-10-28-make-new-memopage %}">にっき | BlankSlate</a></cite>
 
 こんなこと言ったけど、いざ作るとほとんど作りなおしみたいな感じになって、残ってるのはフッターをページ下部に固定するイディオムくらいしかない。
 
