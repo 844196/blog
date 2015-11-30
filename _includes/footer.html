@@ -6,12 +6,6 @@
       {{ site.title }}
     </p>
     <p class="text-muted pull-right">
-      {% for service in site.data.profile.social_accounts %}
-        <a href="{{ service.href }}">
-          <i class="fa {{ service.icon }} fa-lg fa-fw"></i>
-        </a>
-      {% endfor %}
-
       <a href="/feed.xml">
         <i class="fa fa-rss-square fa-lg fa-fw"></i>
       </a>
