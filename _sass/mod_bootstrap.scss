@@ -14,15 +14,13 @@ a {
 
 
 // navbar
-@media (max-width: 767px) {
-  .navbar-brand { line-height: inherit; }
-}
-
 .navbar { margin: 0; }
 .navbar-default {
   .navbar-toggle {
     color: #666;
     border: none;
+    padding: 15px 25px 15px 0;
+    margin: 0;
     &:hover, &:focus { background-color: transparent; }
   }
 }
