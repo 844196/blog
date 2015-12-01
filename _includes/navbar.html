@@ -15,7 +15,8 @@
         <ul class="nav navbar-nav navbar-right">
           {% for nav in site.data.navbar %}
             <li>
-              <a href="{{ nav.href }}">
+              {% assign current-url = site.baseurl | append:page.url %}
+              <a href="{{ nav.href }}" class="{% if current-url == nav.href %}active{% endif %}">
                 <i class="fa {{ nav.icon }} fa-fw"></i>&nbsp;{{ nav.name }}
               </a>
             </li>
