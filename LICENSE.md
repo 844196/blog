@@ -3,6 +3,8 @@ title: License of Source Code
 author: 844196
 date: 2015-10-27
 layout: post
+post-action: 'false'
+comment: 'false'
 ---
 
 The MIT License (MIT)
