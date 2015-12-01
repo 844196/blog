@@ -1,3 +1,6 @@
 - name: 'Profile'
   icon: 'fa-user'
   href: 'http://844196.com/'
+- name: 'Archive'
+  icon: 'fa-archive'
+  href: '/blog/archive.html'

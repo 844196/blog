@@ -1,0 +1,23 @@
+---
+layout: post
+title: Archive
+post-action: 'false'
+comment: 'false'
+---
+
+
+{% for post in site.posts %}
+  {% assign current_year-month = post.date | date:'%Y/%m' %}
+
+  {% if current_year-month != previous_year-month %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h2>{{ current_year-month }}</h2>
+    <ul>
+  {% endif %}
+
+  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+  {% if forloop.last %}</ul>{% endif %}
+
+  {% assign previous_year-month = current_year-month %}
+{% endfor %}
