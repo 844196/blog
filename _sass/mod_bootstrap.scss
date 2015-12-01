@@ -23,7 +23,17 @@ a {
     margin: 0;
     &:hover, &:focus { background-color: transparent; }
   }
+  @mixin navbar-active {
+    color: $primary;
+    @media (min-width: 768px) { border-bottom: solid 1px $primary; }
+  }
+  .navbar-nav>li>a {
+    @media (min-width: 768px) { padding: 15px 15px 14px; }
+    &:active, &:focus { color: #777; border: none; }
+    &:hover, { @include navbar-active; }
+  }
 }
+
 
 
 // main
