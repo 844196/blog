@@ -15,8 +15,12 @@ layout: default
       </div>
     </article>
 
-    {% include post-action.html %}
+    {% unless page.post-action %}
+      {% include post-action.html %}
+    {% endunless %}
 
-    {% include post-comment.html %}
+    {% unless page.comment %}
+      {% include post-comment.html %}
+    {% endunless %}
   </div>
 </div>
