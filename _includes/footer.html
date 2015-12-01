@@ -2,7 +2,10 @@
   <div class="container">
     <p class="text-muted pull-left">
       <i class="fa fa-copyright fa-fw"></i>
-      {{ site.time | date: '%Y' }}
+      {% assign since-year = site.posts[-1].date | date:'%Y' %}
+      {% assign this-year = site.time | date:'%Y' %}
+
+      {% unless this-year == since-year %}{{ since-year }} - {% endunless%}{{ this-year }}
       {{ site.title }}
     </p>
     <p class="text-muted pull-right">
