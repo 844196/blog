@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <div id="site-title" class="col span_6">
+      <h1 class="h2"><a href="{{ site.baseurl }}/" class="inverse">{{ site.title }}</a></h1>
+      <p class="site-description">{{ site.description }}</p>
+    </div>
+    <nav id="navbar" class="col span_6">
+    {% if site.data.navbar %}
+      <ul>
+      {% for nav in site.data.navbar %}
+        <li><a href="{{ nav.href }}" class="inverse"><i class="fa {{ nav.icon }} fa-fw"></i>&nbsp;{{ nav.name }}</a></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    </nav>
+  </div>
+</header>

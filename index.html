@@ -8,28 +8,30 @@ top: true
 
     {% for post in paginator.posts %}
       <div class="summary">
-        <h2>
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <h2 class="h4">
+          <a href="{{ site.baseurl }}{{ post.url }}" class="inverse post-title">{{ post.title }}</a>
         </h2>
-        <time>{{ post.date | date:'%Y/%m/%d %H:%M' }}</time>
-        <p>{{ post.content | strip_html | strip_newlines | truncate:200 }}</p>
+        <time class="meta">{{ post.date | date:'%Y/%m/%d %H:%M' }}</time>
+        <p class="post-summary">{{ post.content | strip_html | strip_newlines | truncate:200 }}</p>
       </div>
     {% endfor %}
 
-    {% if paginator.previous_page or paginator.next_page %}
-      {% if paginator.next_page %}
-        <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pull-left">
-          <i class="fa fa-arrow-left fa-fw"></i>
-          Previous
-        </a>
+    <div class="pagination">
+      {% if paginator.previous_page or paginator.next_page %}
+        {% if paginator.next_page %}
+          <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="inverse pull-left">
+            <i class="fa fa-arrow-left fa-fw"></i>
+            Previous
+          </a>
+        {% endif %}
+        {% if paginator.previous_page %}
+          <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="inverse pull-right">
+            Next
+            <i class="fa fa-arrow-right fa-fw"></i>
+          </a>
+        {% endif %}
       {% endif %}
-      {% if paginator.previous_page %}
-        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pull-right">
-          Next
-          <i class="fa fa-arrow-right fa-fw"></i>
-        </a>
-      {% endif %}
-    {% endif %}
+    </div>
 
   </div>
 </div>
