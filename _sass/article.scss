@@ -1,19 +1,17 @@
 // inspired from angels-ladder
 // angels-ladder: https://github.com/tanksuzuki/angels-ladder
 
-$article-accent-color: $primary;
-$article-main-color: #666;
 
 article {
   font-size: 14px;
-  color: $article-main-color;
+  color: $main-color;
   letter-spacing: 1px;
   line-height: 1.8em;
   word-break: break-word;
 }
 
 .article-header {
-  border-left: 4px solid $article-accent-color;
+  border-left: 4px solid $accent-color;
   padding: 5px 0 5px 10px;
   margin-bottom: 1.2em;
   h1 {
@@ -23,11 +21,11 @@ article {
   }
   time {
     font-size: .8em;
-    color: lighten($article-main-color, 20%);
+    color: lighten($main-color, 20%);
   }
   date {
     font-size: .8em;
-    color: lighten($article-main-color, 20%);
+    color: lighten($main-color, 20%);
   }
 }
 
@@ -43,7 +41,7 @@ article {
     margin-top: 2.5em;
     margin-bottom: 1.2em;
     padding-bottom: 0.5em;
-    border-bottom: 2px solid lighten($article-main-color, 40%);
+    border-bottom: 2px solid lighten($main-color, 40%);
   }
 
   h3 {
@@ -64,7 +62,7 @@ article {
   }
 
   a {
-    color: $article-accent-color;
+    color: $accent-color;
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
@@ -83,7 +81,7 @@ article {
     border: 0;
     margin: 0;
     padding: 0;
-    border-top: 1px dashed lighten($article-main-color, 40%);
+    border-top: 1px dashed lighten($main-color, 40%);
     text-align: center;
     margin: 2.5em 0;
     &:after {
@@ -92,7 +90,7 @@ article {
       position: relative;
       top: -14px;
       padding: 0 3px;
-      color: lighten($article-main-color, 40%);
+      color: lighten($main-color, 40%);
       background-color: white;
     }
   }
@@ -107,11 +105,11 @@ article {
     border-spacing: 0;
     th {
       font-weight: bold;
-      background-color: lighten($article-main-color, 57%);
+      background-color: lighten($main-color, 57%);
     }
     th, td {
       padding: 6px 13px;
-      border: 1px solid lighten($article-main-color, 46%);
+      border: 1px solid lighten($main-color, 46%);
     }
   }
 
@@ -132,8 +130,8 @@ article {
     }
     font-size: inherit;
     padding: 0 15px;
-    color: lighten($article-main-color, 10%);
-    border-left: 4px solid lighten($article-main-color, 40%);
+    color: lighten($main-color, 10%);
+    border-left: 4px solid lighten($main-color, 40%);
   }
 
   ol {
@@ -157,8 +155,8 @@ article {
         display: block;
         content: "";
         position: absolute;
-        border-right: 1px solid lighten($article-main-color, 15%);
-        border-bottom: 1px solid lighten($article-main-color, 15%);
+        border-right: 1px solid lighten($main-color, 15%);
+        border-bottom: 1px solid lighten($main-color, 15%);
         left: -1.3em;
         top: .7em;
         width: 6px;
@@ -199,10 +197,10 @@ article {
   }
 
   code {
-    @include monospace-highlight (lighten($article-main-color, 57%), lighten($article-main-color, 50%), $article-main-color);
+    @include monospace-highlight (lighten($main-color, 57%), lighten($main-color, 50%), $main-color);
   }
 
   kbd {
-    @include monospace-highlight (darken($article-main-color, 30%), black, white)
+    @include monospace-highlight (darken($main-color, 30%), black, white)
   }
 }

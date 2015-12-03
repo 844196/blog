@@ -2,19 +2,19 @@
 // angels-ladder: https://github.com/tanksuzuki/angels-ladder
 
 .summary {
-  color: lighten($article-main-color, 10%);
+  color: lighten($main-color, 10%);
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.8em;
   word-break: break-word;
-  border-bottom: 1px solid lighten($article-main-color, 40%);
+  border-bottom: 1px solid lighten($main-color, 40%);
 
   padding-bottom: 2em;
   margin-bottom: 2em;
 
   a {
-    color: $article-main-color;
-    &:hover { color: $primary; }
+    color: $main-color;
+    &:hover { color: $accent-color; }
   }
 
   h2 {
@@ -27,7 +27,7 @@
 
   time {
     font-size: .8em;
-    color: lighten($article-main-color, 20%);
+    color: lighten($main-color, 20%);
   }
 
   p {
