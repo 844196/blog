@@ -226,7 +226,7 @@ article {
     list-style-type: decimal;
   }
   // FIXME
-  ol>li>p {
+  li>:not(ul) {
     margin: 0;
   }
 
