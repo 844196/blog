@@ -145,6 +145,11 @@ article {
     margin: 1.4rem 0;
   }
 
+  sup {
+    vertical-align: super;
+    font-size: 0.75rem;
+  }
+
   a {
     &:hover {
       text-decoration: underline;
