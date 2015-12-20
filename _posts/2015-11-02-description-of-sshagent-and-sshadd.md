@@ -2,6 +2,7 @@
 layout: post
 title: ssh-agentとssh-add
 date: 2015-11-02 23:37
+tags: SSH ssh-agent ssh-add
 ---
 
 manの書き起こし

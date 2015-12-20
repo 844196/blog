@@ -2,6 +2,7 @@
 layout: post
 title: にっき
 date: 2015-10-28 01:05
+tags: Jekyll
 ---
 
 {% include img src='https://farm6.staticflickr.com/5716/21900350874_b3ed17ca03_b.jpg' %}

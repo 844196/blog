@@ -2,6 +2,7 @@
 layout: post
 title: Twitterの「いいね」を任意のアイコンに変更する知見
 date: 2015-11-04 18:40
+tags: Twitter Vim CSS
 ---
 
 <blockquote class="twitter-tweet tw-align-center" lang="ja"><p lang="ja" dir="ltr">ツールチップの文言変えられなかったけど、文字色変えたしいいや（投げやり） <a href="https://twitter.com/hashtag/vim?src=hash">#vim</a> <a href="https://t.co/IWPCC5V9VJ">pic.twitter.com/IWPCC5V9VJ</a></p>&mdash; はちよん (@844196) <a href="https://twitter.com/844196/status/661820819207643136">2015, 11月 4</a></blockquote>

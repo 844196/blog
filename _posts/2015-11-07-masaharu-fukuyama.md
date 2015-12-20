@@ -2,6 +2,7 @@
 layout: post
 title: 謎の男（福山雅治）に関する知見
 date: 2015-11-07 00:03
+tags: 福山雅治
 ---
 
 あるAnonymous Coward（おふくろ） 曰く、謎の男は<ruby>比古<rt>ひこ</ruby><ruby>清十郎<rt>せいじゅうろう</ruby>というらしい。

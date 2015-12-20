@@ -2,6 +2,7 @@
 layout: post
 title: Guardを用いたブラウザのライブリロード
 date: 2015-11-21 10:44
+tags: Chromium Guard
 ---
 
 <div class="alert alert-info">

@@ -2,6 +2,7 @@
 layout: post
 title: Linuxでリブログを円滑に行う知見
 date: 2015-11-03 23:06
+tags: Tumblr Chromium
 ---
 
 1. ユーザエージェントを偽装するなんかを入れる

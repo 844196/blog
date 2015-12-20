@@ -2,6 +2,7 @@
 layout: post
 title: '% sasairc_yasuna のドット絵アイコンを作って頂きたいのですが、お願いできますでしょうか？'
 date: 2015-10-30 02:41
+tags: AMA
 ---
 
 > % sasairc_yasuna のドット絵アイコンを作って頂きたいのですが、お願いできますでしょうか？
