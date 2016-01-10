@@ -258,18 +258,19 @@ Time.local(*str)
 require 'time'
 require 'benchmark'
 
-date = '2000/01/01'
-time = '12:34:56'
+date    = '2000/01/01'
+time    = '12:34:56'
+traials = 100000
 
 Benchmark.bm 10 do |r|
   r.report 'Time.parse' do
-    100000.times do |i|
+    traials.times do
       Time.parse("#{date} #{time}")
     end
   end
 
   r.report 'Time.local' do
-    100000.times do |i|
+    traials.times do
       Time.local(*"#{date} #{time}".split(/[\/\s:]/))
     end
   end
