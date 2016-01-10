@@ -22,7 +22,6 @@ paginate_path: "page:num"
 gems:
     - jemoji
     - jekyll-sitemap
-    - jekyll-mentions
 
 markdown: redcarpet
 redcarpet:
