@@ -4,6 +4,9 @@ title: 'あれぇ〜おかしいね。2016年なのに2011年度入学生がい�
 date: 2016-01-10 13:46
 ---
 
+<blockquote class="twitter-tweet tw-align-center" lang="ja"><p lang="und" dir="ltr"><a href="https://twitter.com/844196">@844196</a> <a href="https://t.co/rdEqctZ8PZ">pic.twitter.com/rdEqctZ8PZ</a></p>&mdash; spring26@HR46 (@Spring26db) <a href="https://twitter.com/Spring26db/status/686050610710327296">2016, 1月 10</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 この記事は[おさむん家 Advent Calendar 2014](https://docs.google.com/spreadsheets/d/18s122iy_F8RgivDzF6BE6fL-nuHyOql5lZ3E_qeA1Dw/edit#gid=1701793155&vpid=A1)の記事です。**この記事は必ず読む必要があります。**
 
 2016年初Post
