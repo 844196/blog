@@ -54,7 +54,19 @@ pp quotes.map {|quote| Quote.new(quote) }
   @speaker="アブドゥル">]
 ```
 
+### インスタンス生成時
+
+1. ハッシュのペアをイテレートし、インスタンス変数を宣言する
+
+### インスタンスメソッド呼び出し時
+
+1. インスタンス変数へのゲッターは定義していないのでオーバーライドした`method_missing`が呼び出される
+2. 呼び出したメソッド名がインスタンス変数と一致する場合は、値を返却する
+    - 宣言されていない場合は、本物の`method_missing`が呼び出される
+
 ## OpenStruct
+
+最初に書いたやつとまったく同じ動きをする、Ruby同梱ライブラリ。
 
 ```ruby
 require 'ostruct'
@@ -86,6 +98,27 @@ pp quotes.map {|quote| OpenStruct.new(quote) }
   quote="YES I AM!",
   image="/path/to/avdol.png">]
 ```
+
+`Struct`と同じく、継承することもできる。
+
+```ruby
+require 'ostruct'
+require 'pp'
+
+class Quote < OpenStruct
+  def three_times
+    3.times.map { quote }
+  end
+end
+
+Quote.new(:speaker => 'アブドゥル', :quote => 'YES I AM!').three_times
+#=> ["YES I AM!", "YES I AM!", "YES I AM!"]
+```
+
+### 難点
+
+* セッター（`=(var)`）も定義される
+* 定義していないキーにアクセスすると`nil`が返ってくる
 
 ## ref.
 
