@@ -103,7 +103,6 @@ pp quotes.map {|quote| OpenStruct.new(quote) }
 
 ```ruby
 require 'ostruct'
-require 'pp'
 
 class Quote < OpenStruct
   def three_times
