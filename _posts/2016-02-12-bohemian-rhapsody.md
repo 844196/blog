@@ -50,31 +50,31 @@ $ while :; do command1; command2; done
 
 ## Oyaの裏側
 
-### Oya::Handler
+### Oya::Watcher
 
 一応、年始くらいからデザインパターンをやってるので[オブザーバ・パターン](https://ja.wikipedia.org/wiki/Observer_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)で書きました。というか、挙動としてはそのまま当てはまりますね。
 
-インスタンス生成時にファイルの変更通知を受け取りたいクラスをオブザーバとして登録しておけば、あとは`Oya::Handler`が各オブザーバの`update`クラスを呼び出します。デザインパターンっていうと固いイメージですが、やってることはインターフェイスの強制というかポリモーフィズムぽいですね。
+インスタンス生成時にファイルの変更通知を受け取りたいクラスをオブザーバとして登録しておけば、あとは`Oya::Watcher`が各ハンドラの`update`クラスを呼び出します。デザインパターンっていうと固いイメージですが、やってることはインターフェイスの強制というかポリモーフィズムぽいですね。
 
 ```ruby
-# Oya::Handlerの一部
+# Oya::Watcherの一部
 loop do
   # ファイルが変更されている場合は
-  if target_changed?
+  if target.changed?
     # オブザーバに通知する
-    notify_observers
+    notify_handlers
   end
 end
 ```
 
 ```ruby
-# Oya::Handlerから通知を受け取るオブザーバの例: シェル通知
-class Oya::Observers::ShellNotifier < Oya::Observers::Observer
+# Oya::Watcherから通知を受け取るハンドラの例: シェル通知
+class Oya::Handler::ShellNotifier < Oya::Handler::Base
   def initialize(message)
     @message = message
   end
 
-  # Oya::Handlerから更新通知を受け取った場合は
+  # Oya::Watcherから更新通知を受け取った場合は
   def show(params={})
     # `[時間] メッセージ' を表示する
     puts "\n[#{params[:time]}] #{(params[:message] || @message)}"
@@ -84,7 +84,7 @@ class Oya::Observers::ShellNotifier < Oya::Observers::Observer
 end
 ```
 
-通知先を増やしたい場合は、`Oya::Observers::Observer`（定数参照用のベースクラス）を継承したクラスを生成し、`update`で`Oya::Handler`からの通知を受け取れるようにすればよく、`Oya::Handler`側で改修作業をする必要がありません[^6]。
+通知先を増やしたい場合は、`Oya::Handler::Base`（定数参照用のベースクラス）を継承したクラスを生成し、`update`で`Oya::Watcher`からの通知を受け取れるようにすればよく、`Oya::Watcher`側で改修作業をする必要がありません[^6]。
 
 [^6]: 理想
 
@@ -92,21 +92,21 @@ end
 
 ### ライブラリAPIのインターフェイス
 
-Rubyを始めて8ヶ月目、Gemを5個くらいしかリリースしてないぺーぺーなので毎回悩みます。最近ようやっと積んでいたメタプログラミングRubyを読みつつProcを理解しているところで、少しはRubyっぽいインターフェイスにできました。
+Rubyを始めて8ヶ月目、Gemを5個くらいしかリリースしてないぺーぺーなので毎回悩みます。
 
 ```ruby
-Oya::Handler.watch(target_path) do |handle|
+watch = Oya.watch(target_path) do
   # 更新検知間隔をオプション引数で指定された値に設定
-  handle.interval = option[:interval]
+  interval = option[:interval]
 
   # 通知を受け取るオブザーバを追加
-  handle.add_observer Oya::Observers::ShellNotifier.new('Target update!')
-  handle.add_observer Oya::Observers::DesktopNotifier.new('Target update!')
-  handle.add_observer Oya::Observers::Command.new(command_str)
+  add_handler Oya::Handler::ShellNotifier.new('Target update!')
+  add_handler Oya::Handler::DesktopNotifier.new('Target update!')
+  add_handler Oya::Handler::Command.new(command_str)
 end
 ```
 
-個人的には、コンストラクタにブロックを渡すと`self`をブロック引数にするような動きの方が好みです。
+個人的には、コンストラクタにブロックを渡すと`self`をブロック引数にするような動きの方が好みです。ハンドラ登録が長くなりそうだったんで、`instance_eval`にしましたが…
 
 ### 外部設定ファイルの読み込み
 
@@ -114,7 +114,7 @@ end
 
 ### Rakefile
 
-gemspec（gemパッケージマネージャーが読み取るgemの基本情報や依存関係が記述されたファイル）を書く元気がなかったので、インストールは`Rakefile`で`/usr/local/bin`へ直接コピーすることにしました。
+gemspec（gemパッケージマネージャーが読み取るgemの基本情報や依存関係が記述されたファイル）を書く元気もなく依存する外部Gemもないので、インストールは`Rakefile`で`/usr/local/bin`へ直接コピーすることにしました。
 
 一応、Ruby標準ライブラリの`un`（OS・ディストリビューション間の実装差異に関係なくコマンドを実行できる）を使っているので、`PREFIX`を正しく設定すれば、どこでもインストールできるはずです[^4]。
 
@@ -127,24 +127,9 @@ $ ruby -run -e mkdir -- -p /usr/local/lib/oya
 
 ## 課題
 
-### 監視クラスの任務が多い
+### テストがない
 
-現在、ファイル監視クラス`Oya::Handler`は以下の処理を行っています:
-
-1. ファイルのハッシュ値を取得
-2. 前のループ時のハッシュ値と`1`を比較
-    * 変化していればオブザーバへ通知
-    * 変化していなければ何もしない
-3. 現在のハッシュ値を*直前の値*として保持
-4. 次のループへ
-
-監視モジュールの一番の役割は変更を検知することなので、`1`や`3`のような*ハッシュ値を取得したり保持する*のは`Target`クラスなりに移譲すべきかなーと思ってます[^7]。
-
-[^7]: インターフェイスを統一して、「変更」の定義をサブクラスで実装すれば、理論上はファイル以外の変更を取得できる設計になる（はず）
-
-### CLIのインターフェイスに密結合している
-
-今のところ、一度監視を開始したら`<C-c>`で終了させる以外ありません。その他の終了手段がないため、テストの書きようがありません。また、ライブラリとして利用できません。
+{% include img src='http://blog.codinghorror.com/content/images/uploads/2007/03/6a0120a85dcdae970b0128776ff992970c-pi.png' caption='俺のマシンでは動いてるよ' %}
 
 ## 感想
 
