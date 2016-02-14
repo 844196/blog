@@ -54,14 +54,14 @@ $ while :; do command1; command2; done
 
 一応、年始くらいからデザインパターンをやってるので[オブザーバ・パターン](https://ja.wikipedia.org/wiki/Observer_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)で書きました。というか、挙動としてはそのまま当てはまりますね。
 
-インスタンス生成時にファイルの変更通知を受け取りたいクラスをオブザーバとして登録しておけば、あとは`Oya::Watcher`が各ハンドラの`update`クラスを呼び出します。デザインパターンっていうと固いイメージですが、やってることはインターフェイスの強制というかポリモーフィズムぽいですね。
+インスタンス生成時にファイルの変更通知を受け取りたいクラスをハンドラとして登録しておけば、あとは`Oya::Watcher`が各ハンドラの`update`クラスを呼び出します。デザインパターンっていうと固いイメージですが、やってることはインターフェイスの強制というかポリモーフィズムぽいですね。
 
 ```ruby
 # Oya::Watcherの一部
 loop do
   # ファイルが変更されている場合は
   if target.changed?
-    # オブザーバに通知する
+    # ハンドラに通知する
     notify_handlers
   end
 end
@@ -88,7 +88,7 @@ end
 
 [^6]: 理想
 
-私は光学ドライブを持ってないので実装も確認もできませんが、*「ファイルが変更されたらドライブをエジェクトする」オブザーバ*を追加するPR待ってます。
+私は光学ドライブを持ってないので実装も確認もできませんが、*「ファイルが変更されたらドライブをエジェクトする」ハンドラ*を追加するPR待ってます。
 
 ### ライブラリAPIのインターフェイス
 
@@ -99,7 +99,7 @@ watch = Oya.watch(target_path) do
   # 更新検知間隔をオプション引数で指定された値に設定
   interval = option[:interval]
 
-  # 通知を受け取るオブザーバを追加
+  # 通知を受け取るハンドラを追加
   add_handler Oya::Handler::ShellNotifier.new('Target update!')
   add_handler Oya::Handler::DesktopNotifier.new('Target update!')
   add_handler Oya::Handler::Command.new(command_str)
