@@ -36,7 +36,7 @@ end
 require 'n_cipher'
 
 class User
-  include ArgumentValidation
+  include NCipher::ArgumentValidation
 
   # 処理がこれだけなら `attr_writer`に任せてもいい
   def password=(string)
