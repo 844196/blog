@@ -24,20 +24,9 @@ gems:
     - jekyll-sitemap
     - jekyll-paginate
 
-markdown: redcarpet
-redcarpet:
-    extensions:
-        - tables
-        - fenced_code_blocks
-        - no_intra_emphasis
-        - strikethrough
-        - footnotes
-        - autolink
-        - lax_spacing
-        - space_after_headers
-        - hard_wrap
-        - highlight
-        - with_toc_data
+markdown: kramdown
+kramdown:
+  input: GFM
 
 pygment: false
 sass:
