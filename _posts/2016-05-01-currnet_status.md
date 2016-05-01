@@ -97,3 +97,12 @@ $ pacbundle install
 {% include img src='https://pbs.twimg.com/media/BtcSFKpCQAAb73x.jpg:large' caption='最近の昼ごはんは、食べ放題のうまい棒か社内通貨で買えるカロリーメイトです' %}
 
 生きてます。火曜〜金曜まで実家に帰省する予定です。
+
+## P.S.
+
+なんか性癖書く流れなんで書いておきます
+
+**注: 見ると危ない**
+
+* Tumblr: <http://844196.tumblr.com/>
+* Pixivブックマーク: <http://www.pixiv.net/bookmark.php?id=862252>
